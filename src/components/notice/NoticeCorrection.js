@@ -90,7 +90,8 @@ const NoticeCorrection = props => {
     setIsImportant(event.target.checked);
   };
 
-  const handleCencle = () => {
+  const handleCencle = e => {
+    e.preventDefault();
     navigate(-1);
   };
 
@@ -157,7 +158,7 @@ const NoticeCorrection = props => {
         </NoticeWhiteNoitce>
         <NoticeWUButton>
           <NoticeButton type="submit">수정</NoticeButton>
-          <NoticeButton onClick={handleCencle}>취소</NoticeButton>
+          <NoticeButton onClick={e => handleCencle(e)}>취소</NoticeButton>
         </NoticeWUButton>
       </form>
     </NoticeWrap>
